@@ -13,16 +13,12 @@ class Auth_Model extends CI_Model {
 	}
 
 	public function authUsers($username, $password){
-		$check = $this->db->get_where('users', array('username'=>$username, 'password'=>$password))->row();
+		$check = $this->db->get_where('users', array('email'=>$username, 'password'=>$password))->row();
 		$arr = Array();
 		$obj = Array();
 		$arr['userID'] = $check->id;
 		$arr['namaLengkap'] = $check->nama_lengkap;
-		$arr['userName'] = $check->username;
-		$arr['password'] = $check->password;
-		$arr['levelID'] = $check->IDlevel;
 		$obj['Users'] = $arr;
-		$obj['Menus'] = $this->authMenus($check->IDlevel); 
 		// return Array($arr, $this->authMenus($check->IDlevel));
 		return $obj;
 	}

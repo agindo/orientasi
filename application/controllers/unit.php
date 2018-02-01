@@ -3,6 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Unit extends CI_Controller {
 
+	function __construct() {
+        parent::__construct();
+        checkSession();
+    }
+
 	public function index()
 	{
 		$data['url'] = $this->uri->segment(1);

@@ -69,4 +69,9 @@ class Formasi_model extends CI_Model {
 		return $this->db->count_all_results();
 	}
 
+	public function show()
+	{
+		return $this->db->get($this->table);
+	}
+
 }

@@ -14,12 +14,18 @@
       body{padding-top:20px;}
     </style>
   </head>
-
   <body>
 
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
+          <?php
+            if($alert == ""){
+              echo 0;
+            }else{
+              echo 1;
+            }
+          ?>
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Please sign in</h3>

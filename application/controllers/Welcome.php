@@ -6,7 +6,8 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		checkLogin();
-		$this->load->view('log');
+		$data['alert'] = "";
+		$this->load->view('log', $data);
 	}
 
 	public function auth()
@@ -14,8 +15,9 @@ class Welcome extends CI_Controller {
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		$check = $this->auth_model->auth($username, $password);
+		$checkUsers = $this->auth_model->authUsers($username, $password);
 		if($check == 1){
-			$this->session->set_userdata(array('statusUsers'=>1));
+			$this->session->set_userdata(array('statusUsers'=>1, 'checkUsers'=>$checkUsers));
 			redirect('dashboard');
 		}else{
 			redirect(base_url());

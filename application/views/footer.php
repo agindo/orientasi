@@ -118,6 +118,8 @@ function editData(id)
             $('[name="id"]').val(data.id);
             $('[name="firstName"]').val(data.unit_kerja);
             $('[name="formasiJabatan"]').val(data.formasi_jabatan);
+            $('[name="selectformasiJabatan"]').val(data.id_formasi);
+            $('[name="selectunitKerja"]').val(data.id_unit);
             $('[name="namaPejabat"]').val(data.nama_pejabat);
             $('[name="pangkatPejabat"]').val(data.pangkat);
             $('#modal_form').modal('show'); // show bootstrap modal when complete loaded

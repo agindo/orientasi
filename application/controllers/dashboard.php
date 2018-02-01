@@ -10,8 +10,9 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
+		$data['kata'] = $this->session->userdata('checkUsers');
 		$this->load->view('header');
-		$this->load->view('dashboard');
+		$this->load->view('dashboard', $data);
 		$this->load->view('footer');
 	}
 }

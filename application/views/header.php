@@ -50,6 +50,7 @@
                 <li><a href="#">One more separated link</a></li>
               </ul>
             </li>
+            <li><a href="welcome/logout">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
